@@ -1,66 +1,79 @@
+@use '../vars.scss';
+
 .pass-input {
     position: relative;
     display: flex;
     flex-direction: column;
 
+    &.l {
+        .pass-input__input {
+            min-height: 56px;
+            padding-left: 20px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .pass-input__show {
+            bottom: 14px;
+        }
+    }
+
     &__label {
         margin-bottom: 4px;
-        color: #5c5c5c;
         font-size: 12px;
         line-height: 1.33;
-
-        // @include mobile {
-        //     margin-bottom: 8px;
-        //     font-size: 14px;
-        //     line-height: 20px;
-        // }
     }
 
     &__input {
-        padding: 7px 34px 7px 8px;
-        border-radius: 8px;
-        border: 1px solid rgba(0, 0, 0, 0.16);
-        background: #fff;
-        color: #1f1f1f;
+        min-height: 44px;
+        padding: 10px 34px 10px 16px;
+        border-radius: 16px;
+        border: 2px solid vars.$darkner-16;
+        background-color: vars.$background-primary;
+        color: inherit;
         font-family: inherit;
         font-size: 14px;
         font-weight: 400;
         line-height: 20px;
         transition: all 0.2s;
 
-        // @include mobile {
-        //     padding: 9px 38px 9px 15px;
-        //     font-size: 16px;
-        //     line-height: 24px;
-        // }
-
         &::placeholder {
-            color: #8f8f8f;
+            color: vars.$text-third;
         }
 
         &:hover {
-            border-color: rgba(1, 144, 219, 0.48);
+            border-color: vars.$darkner-48;
         }
 
         &:focus {
             outline: none;
-            border-color: rgba(1, 144, 219, 0.48);
+            border-color: vars.$accent-500;
         }
 
         &:disabled {
-            border-color: rgba(0, 0, 0, 0.08);
-            background-color: rgba(0, 0, 0, 0.08);
+            border-color: vars.$darkner-16;
+            opacity: 0.64;
         }
 
         &.error {
-            border-color: rgba(255, 59, 56, 0.48);
+            border-color: vars.$error-500;
         }
+
+        &_force-alert {
+            border-color: vars.$error-500;
+        }
+    }
+
+    &__input-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
     }
 
     &__show {
         position: absolute;
         display: flex;
-        bottom: 6px;
+        bottom: 10px;
         right: 8px;
         width: 24px;
         height: 24px;
@@ -71,14 +84,9 @@
         background-color: transparent;
         cursor: pointer;
 
-        // @include mobile {
-        //     right: 12px;
-        //     bottom: 10px;
-        // }
-
         &:hover {
             svg {
-                fill: #1f1f1f;
+                color: vars.$text-primary;
             }
         }
 
@@ -88,7 +96,7 @@
     }
 
     &__icon {
-        fill: #8f8f8f;
+        color: vars.$text-primary;
         transition: all 0.2s;
 
         &_open {
@@ -99,12 +107,19 @@
     &__alert {
         display: none;
         margin-top: 4px;
-        color: #ff3b38;
+        color: vars.$error-500;
         font-size: 14px;
         line-height: 20px;
 
         &.active {
             display: block;
         }
+    }
+
+    &__force-alert {
+        margin-top: 4px;
+        color: vars.$error-500;
+        font-size: 14px;
+        line-height: 20px;
     }
 }

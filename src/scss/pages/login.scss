@@ -1,0 +1,54 @@
+@use '../vars.scss';
+
+.login-title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &__text {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 44px;
+    }
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__link {
+        font-family: inherit;
+        font-weight: 600;
+        color: vars.$link-500;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+            color: vars.$link-700;
+        }
+    }
+
+    &__captcha {
+        width: 302px;
+        display: flex;
+    }
+
+    &__captcha-img {
+        width: 100%;
+    }
+
+    &__button {
+        width: fit-content;
+    }
+
+    &__apply-button {
+        width: 160px;
+    }
+}

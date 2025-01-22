@@ -1,0 +1,51 @@
+extends ../layout.pug
+
+block variables
+    - var hasLogin = 'false'
+
+block content
+    include ../includes/header.pug
+    include ../components/button.pug
+    include ../components/text-input.pug
+    include ../components/text-area.pug
+    include ../components/pass-input.pug
+    include ../components/checkbox.pug
+    include ../icons/icon-ok.pug
+
+    .main
+        .content
+            .content__left
+                .message.hidden.js-message
+                    .message__title Сообщение в техподдержку
+                    .message__sub-title Если у вас возникли вопросы в процессе работы с Wazapa Pro напишите нам и мы постараемся в кратчайшие сроки вам ответить
+                    .message__form
+                        +text-area({placeholder: 'Placeholder', className: 'message__textarea'})
+                        .message__controls
+                            +button({text: 'Отмена', theme: 'secondary', className: 'js-close-message'})
+                            +button({text: 'Отправить сообщение'})
+
+                .login-title Вход в личный кабинет
+                .login
+                    .login__inputs
+                        +text-input({placeholder: 'Email', size: 'l', className: 'login__email', forceAlert: 'Не указан логин'})
+                        +pass-input({placeholder: 'Password', size: 'l', forceAlert: 'Не указан пароль'})
+                        a.login__link(href="remember-pass.html") Забыли пароль?
+                    .checkbox-wrapper
+                        .checkbox
+                            input.error(type="checkbox" id="access-checkbox" name="login-checkbox")
+                            label.checkbox__label(for="access-checkbox") Я подтверждаю, что ознакомлен с условиями 
+                                a.link(href="privacy") Пользовательского соглашения 
+                                span и 
+                                a.link(href="oferta") Оферты
+                                +icon-ok('checkbox__icon-ok')
+                            .checkbox__alert Необходимо ваше подтверждение
+                    .login__captcha
+                        img.login__captcha-img(src="img/captcha.png")
+                    +button({text: 'Войти', size: 'l', className: 'login__apply-button'})
+                    
+                .auth-block
+                    span Не зарегистрированы?
+                    a.link(href="reg.html") Подключитесь
+
+            .content__right
+                img.content__right-img(src="img/il.svg")

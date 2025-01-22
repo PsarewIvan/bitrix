@@ -1,0 +1,46 @@
+extends ../layout.pug
+
+block variables
+    - var hasLogin = 'false'
+
+block content
+    include ../includes/header.pug
+    include ../components/button.pug
+    include ../components/text-input.pug
+    include ../components/text-area.pug
+    include ../components/pass-input.pug
+    include ../components/checkbox.pug
+    include ../icons/icon-ok.pug
+
+    .main
+        .content
+            .content__left
+                .message.hidden.js-message
+                    .message__title Сообщение в техподдержку
+                    .message__sub-title Если у вас возникли вопросы в процессе работы с Wazapa Pro напишите нам и мы постараемся в кратчайшие сроки вам ответить
+                    .message__form
+                        +text-area({placeholder: 'Placeholder', className: 'message__textarea'})
+                        .message__controls
+                            +button({text: 'Отмена', theme: 'secondary', className: 'js-close-message'})
+                            +button({text: 'Отправить сообщение'})
+
+                .login-title
+                    .login-title__text Регистрация
+                .login
+                    .login__inputs
+                        +text-input({placeholder: 'Email', size: 'l'})
+                        +text-input({placeholder: 'Телефон', size: 'l'})
+                        +text-input({placeholder: 'Имя', size: 'l'})
+                        +text-input({placeholder: 'Название компании', size: 'l'})
+                        +text-input({placeholder: 'Название портала в Битрикс24', size: 'l'})
+
+                    .login__captcha
+                        img.login__captcha-img(src="img/captcha.png")
+                    +button({text: 'Зарегистрироваться', size: 'l', className: 'login__button'})
+                    
+                .auth-block
+                    span Уже зарегистрированы?
+                    a.link(href="login.html") Войдите
+
+            .content__right
+                img.content__right-img(src="img/il.svg")

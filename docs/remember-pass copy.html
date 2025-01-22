@@ -19,16 +19,6 @@
               </svg><span>Есть вопросы?</span>
           <button class="header__content-question-button js-message-button" type="button">Свяжитесь с нами</button>
         </div>
-        <div class="header__content-account">
-          <div class="header__content-account-text"><span>Аккаунт: </span><span class="header__content-account-name">client@wazapa.pro</span></div>
-          <div class="header__content-exit">
-            <button class="header__exit-button tooltip-trigger js-tooltip-trigger" type="button">
-                  <svg class="header__exit-button-icon" fill="none" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="m11.25 20.25c0 .1989-.079.3897-.2197.5303-.1406.1407-.3314.2197-.5303.2197h-6c-.19891 0-.38968-.079-.53033-.2197-.14065-.1406-.21967-.3314-.21967-.5303v-16.5c0-.19891.07902-.38968.21967-.53033s.33142-.21967.53033-.21967h6c.1989 0 .3897.07902.5303.21967.1407.14065.2197.33142.2197.53033s-.079.38968-.2197.53033c-.1406.14065-.3314.21967-.5303.21967h-5.25v15h5.25c.1989 0 .3897.079.5303.2197.1407.1406.2197.3314.2197.5303zm10.2806-8.7806-3.75-3.75003c-.1407-.14073-.3316-.21979-.5306-.21979s-.3899.07906-.5306.21979c-.1408.14074-.2198.33161-.2198.53063s.079.38989.2198.53063l2.4703 2.46937h-8.6897c-.1989 0-.3897.079-.53033.2197-.14065.1406-.21967.3314-.21967.5303s.07902.3897.21967.5303c.14063.1407.33143.2197.53033.2197h8.6897l-2.4703 2.4694c-.1408.1407-.2198.3316-.2198.5306s.079.3899.2198.5306c.1407.1408.3316.2198.5306.2198s.3899-.079.5306-.2198l3.75-3.75c.0698-.0696.1251-.1523.1628-.2434.0378-.091.0572-.1886.0572-.2872s-.0194-.1962-.0572-.2872c-.0377-.0911-.093-.1738-.1628-.2434z" fill="currentColor"></path>
-                  </svg><span class="tooltip js-tooltip">Выйти</span>
-            </button>
-          </div>
-        </div>
       </div>
     </header>
     <div class="main">
@@ -49,17 +39,15 @@
               </div>
             </div>
           </div>
-          <div class="content__title-block">
-            <h1 class="title">Добро пожаловать</h1>
-            <p class="sub-title">Вы можете отправлять и принимать сообщения из мессенджера WhatsApp через встроенное меню в Сделке или Контакте</p>
+          <div class="login-title">
+            <div class="login-title__text">Забыли пароль?</div>
+            <div class="login-title__sub-text">Введите адрес электронной почты привязанный к вашей учетной записи, и мы вышлем вам пароль.</div>
           </div>
-          <div class="help-form">
-            <p class="help-form__title">Помощь в подключении</p>
-            <p class="help-form__content">Если вы хотите, чтобы мы сопровождали вас в процессе подключения сервиса, укажите свой номер телефона и мы свяжемся с вами</p>
-            <div class="help-form__controls">
-                  <div class="text-input js-text-input-node m help-form__controls-input">
+          <div class="login">
+            <div class="login__inputs">
+                  <div class="text-input js-text-input-node l login__email">
                     <div class="text-input__input-wrapper">
-                      <input class="text-input__input js-text-input" type="text" placeholder="Укажите номер телефона">
+                      <input class="text-input__input js-text-input" type="text" placeholder="Email">
                       <button class="text-input__reset js-text-input-reset" type="button">
                             <svg class="text-input__icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
                               <path d="M13.0303 4.03033C13.3232 3.73744 13.3232 3.26256 13.0303 2.96967C12.7374 2.67678 12.2626 2.67678 11.9697 2.96967L8 6.93934L4.03033 2.96967C3.73744 2.67678 3.26256 2.67678 2.96967 2.96967C2.67678 3.26256 2.67678 3.73744 2.96967 4.03033L6.93934 8L2.96967 11.9697C2.67678 12.2626 2.67678 12.7374 2.96967 13.0303C3.26256 13.3232 3.73744 13.3232 4.03033 13.0303L8 9.06066L11.9697 13.0303C12.2626 13.3232 12.7374 13.3232 13.0303 13.0303C13.3232 12.7374 13.3232 12.2626 13.0303 11.9697L9.06066 8L13.0303 4.03033Z" fill="currentColor"></path>
@@ -67,24 +55,22 @@
                       </button>
                     </div>
                   </div>
-                  <button class="button m primary " type="button">Отправить
-                  </button>
             </div>
-          </div>
-          <div class="auth">
-            <p class="auth__title">Авторизация телефона</p>
-            <div class="auth__block-content">
-              <div class="auth__content">
-                <div class="auth__text">Для того чтобы отправлялись сообщения в WhatsApp, нужно чтобы ваш рабочий телефон был авторизован в Wazapa Pro</div>
-                <ol class="auth__content-list">
-                  <li class="auth__content-list-item">Откройте на телефоне WhatsApp и перейдите в Настройки</li>
-                  <li class="auth__content-list-item">Нажмите на пункт Связанные устройства</li>
-                  <li class="auth__content-list-item">Нажмите на кнопку Привязка устройства</li>
-                  <li class="auth__content-list-item">Наведите камеру на qr-код</li>
-                </ol>
-              </div><img class="auth__qr" src="img/qr.png">
+            <div class="checkbox-wrapper">
+              <div class="checkbox">
+                <input type="checkbox" id="access-checkbox" name="login-checkbox">
+                <label class="checkbox__label" for="access-checkbox">Я подтверждаю, что ознакомлен с условиями <a class="link" href="privacy">Пользовательского соглашения </a><span>и </span><a class="link" href="oferta">Оферты</a>
+                      <svg class="checkbox__icon-ok" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M14.5306 5.03063L6.5306 13.0306C6.46092 13.1005 6.37813 13.156 6.28696 13.1939C6.1958 13.2317 6.09806 13.2512 5.99935 13.2512C5.90064 13.2512 5.8029 13.2317 5.71173 13.1939C5.62057 13.156 5.53778 13.1005 5.4681 13.0306L1.9681 9.53063C1.89833 9.46087 1.84299 9.37804 1.80524 9.28689C1.76748 9.19574 1.74805 9.09804 1.74805 8.99938C1.74805 8.90072 1.76748 8.80302 1.80524 8.71187C1.84299 8.62072 1.89833 8.53789 1.9681 8.46813C2.03786 8.39837 2.12069 8.34302 2.21184 8.30527C2.30299 8.26751 2.40069 8.24808 2.49935 8.24808C2.59801 8.24808 2.69571 8.26751 2.78686 8.30527C2.87801 8.34302 2.96083 8.39837 3.0306 8.46813L5.99997 11.4375L13.4693 3.96938C13.6102 3.82848 13.8013 3.74933 14.0006 3.74933C14.1999 3.74933 14.391 3.82848 14.5318 3.96938C14.6727 4.11028 14.7519 4.30137 14.7519 4.50063C14.7519 4.69989 14.6727 4.89098 14.5318 5.03188L14.5306 5.03063Z" fill="currentColor"></path>
+                      </svg>
+                </label>
+              </div>
             </div>
+            <div class="login__captcha"><img class="login__captcha-img" src="img/captcha.png"></div>
+                <button class="button l primary login__apply-button" type="button">Войти
+                </button>
           </div>
+          <div class="auth-block"><span>Не зарегистрированы?</span><a class="link" href="register.html">Подключитесь</a></div>
         </div>
         <div class="content__right"><img class="content__right-img" src="img/il.svg"></div>
       </div>

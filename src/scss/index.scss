@@ -9,9 +9,11 @@
 @use './components/header.scss';
 @use './components/button.scss';
 @use './components/toggle.scss';
+@use './components/checkbox.scss';
 
 @use './pages/index.scss';
 @use './pages/notification.scss';
+@use './pages/login.scss';
 
 * {
     box-sizing: border-box;
@@ -90,6 +92,22 @@ body {
     &__controls {
         display: flex;
         gap: 12px;
+    }
+}
+
+.auth-block {
+    display: flex;
+    gap: 4px;
+    margin: 24px 0;
+}
+
+.link {
+    text-decoration: none;
+    color: vars.$link-500;
+    transition: color 0.2s;
+
+    &:hover {
+        color: vars.$link-700;
     }
 }
 
