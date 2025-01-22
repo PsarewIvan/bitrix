@@ -1,0 +1,44 @@
+extends ../layout.pug
+
+block variables
+    - var page = 'index'
+
+block content
+    include ../includes/header.pug
+    include ../components/button.pug
+    include ../components/text-input.pug
+    include ../components/text-area.pug
+
+    .main
+        .content
+            .content__left
+                .message.js-message
+                    .message__title Сообщение в техподдержку
+                    .message__success Ваш запрос успешно отправлен
+                    .message__sub-title Мы постараемся в кратчайшие сроки вам ответить
+
+                .content__title-block
+                    h1.title Добро пожаловать
+                    p.sub-title Вы можете отправлять и принимать сообщения из мессенджера WhatsApp через встроенное меню в Сделке или Контакте
+
+                .help-form
+                    p.help-form__title Помощь в подключении
+                    p.help-form__content Если вы хотите, чтобы мы сопровождали вас в процессе подключения сервиса, укажите свой номер телефона и мы свяжемся с вами
+                    .help-form__controls
+                        +text-input({placeholder: 'Укажите номер телефона', className: 'help-form__controls-input'})
+                        +button({text: 'Отправить'})
+
+                .auth
+                    p.auth__title Авторизация телефона
+                    .auth__block-content
+                        .auth__content
+                            .auth__text Для того чтобы отправлялись сообщения в WhatsApp, нужно чтобы ваш рабочий телефон был авторизован в Wazapa Pro
+                            ol.auth__content-list
+                                li.auth__content-list-item Откройте на телефоне WhatsApp и перейдите в Настройки
+                                li.auth__content-list-item Нажмите на пункт Связанные устройства
+                                li.auth__content-list-item Нажмите на кнопку Привязка устройства
+                                li.auth__content-list-item Наведите камеру на qr-код
+                        img.auth__qr(src="img/qr.png")
+
+            .content__right
+                img.content__right-img(src="img/il.svg")

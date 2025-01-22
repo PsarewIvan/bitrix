@@ -8,7 +8,7 @@
     if (!showButton || !message) return;
 
     showButton.addEventListener('click', () => {
-        message.classList.remove(HIDDEN_CLASS);
+        message.classList.toggle(HIDDEN_CLASS);
     });
 
     closeButton?.addEventListener('click', () => {

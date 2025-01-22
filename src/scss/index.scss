@@ -59,19 +59,28 @@ body {
 .message {
     display: flex;
     flex-direction: column;
-    gap: 24px;
     margin-bottom: 24px;
 
     &__title {
+        margin-bottom: 24px;
         font-weight: 500;
         font-size: 32px;
         line-height: 44px;
+    }
+
+    &__success {
+        margin-bottom: 4px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        color: vars.$success-500;
     }
 
     &__form {
         display: flex;
         flex-direction: column;
         gap: 12px;
+        margin-top: 24px;
     }
 
     &__textarea {
