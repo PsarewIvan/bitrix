@@ -1,0 +1,34 @@
+extends ../layout.pug
+
+block variables
+    - var page = 'index'
+
+block content
+    include ../includes/header.pug
+    include ../components/toggle.pug
+    include ../components/text-area.pug
+    include ../components/button.pug
+
+    .main
+        .content
+            .content__left
+                .message.hidden.js-message
+                    .message__title Сообщение в техподдержку
+                    .message__sub-title Если у вас возникли вопросы в процессе работы с Wazapa Pro напишите нам и мы постараемся в кратчайшие сроки вам ответить
+                    .message__form
+                        +text-area({placeholder: 'Placeholder', className: 'message__textarea'})
+                        .message__controls
+                            +button({text: 'Отмена', theme: 'secondary', className: 'js-close-message'})
+                            +button({text: 'Отправить сообщение'})
+
+                .content__title-block
+                    h1.title Добро пожаловать
+                    p.sub-title Вы можете отправлять и принимать сообщения из мессенджера WhatsApp через встроенное меню в Сделке или Контакте
+
+                .notification
+                    p.notification__title Уведомления
+                    +toggle({id: 'notification-user', text: 'Получать уведомления для текущего пользователя Константин Константинпольский (konstantinopolsky.konstantin@mail.ru)', checked: true})
+                    +toggle({id: 'notification-line', text: 'Получать сообщения в Открытые линии', checked: true})
+
+            .content__right
+                img.content__right-img(src="img/il.svg")

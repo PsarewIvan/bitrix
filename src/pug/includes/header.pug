@@ -1,0 +1,21 @@
+block content
+    include ../components/tooltip.pug
+    include ../icons/icon-question.pug
+    include ../icons/icon-exit.pug
+
+    header.header
+        .header__logo
+            img.header__logo-img(src="img/logo.svg")
+        .header__content
+            .header__content-question
+                +icon-question('header__content-question-icon')
+                span Есть вопросы?
+                button.header__content-question-button.js-message-button(type="button") Свяжитесь с нами
+            .header__content-account
+                .header__content-account-text
+                    span Аккаунт: 
+                    span.header__content-account-name client@wazapa.pro
+                .header__content-exit
+                    button.header__exit-button.tooltip-trigger.js-tooltip-trigger(type="button")
+                        +icon-exit('header__exit-button-icon')
+                        +tooltip('Выйти')

@@ -1,0 +1,97 @@
+@use 'reset';
+@use 'fonts';
+@use 'vars';
+
+@use './components/pass-input.scss';
+@use './components/text-area.scss';
+@use './components/text-input.scss';
+@use './components/tooltip.scss';
+@use './components/header.scss';
+@use './components/button.scss';
+@use './components/toggle.scss';
+
+@use './pages/index.scss';
+@use './pages/notification.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: vars.$rubik;
+    line-height: 1.5;
+    color: vars.$text-primary;
+    background-color: vars.$background-primary;
+}
+
+.main {
+    max-width: 1176px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+    margin: 92px auto 48px;
+}
+
+.title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 56px;
+    letter-spacing: calc(48px * (-2 / 100));
+}
+
+.sub-title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+
+    &__title {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 44px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__textarea {
+        height: 104px;
+    }
+
+    &__controls {
+        display: flex;
+        gap: 12px;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.transparent {
+    opacity: 0 !important;
+}
+
+.body-lock {
+    overflow: hidden;
+}

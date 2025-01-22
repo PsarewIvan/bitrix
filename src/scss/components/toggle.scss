@@ -1,0 +1,90 @@
+@use '../vars.scss';
+
+.toggle {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+
+    input[type='checkbox'] {
+        display: none;
+
+        &:checked + label {
+            color: vars.$text-primary;
+
+            &::before {
+                border-color: vars.$darkner-16;
+                background-color: vars.$accent-500;
+            }
+
+            &::after {
+                transform: translateX(20px);
+                background-color: vars.$background-primary;
+            }
+        }
+
+        &.error + label {
+            &::before {
+                border-color: vars.$error-500;
+            }
+
+            .radio__description {
+                color: vars.$error-500;
+            }
+        }
+    }
+
+    &__label {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding-left: 60px;
+        margin: 4px 0;
+        color: vars.$text-secondary;
+        font-size: 14px;
+        line-height: 20px;
+        cursor: pointer;
+        user-select: none;
+        transition: color 0.2s;
+
+        &:hover {
+            color: vars.$text-primary;
+
+            &::before {
+                border-color: vars.$accent-500;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -4px;
+            width: 48px;
+            height: 28px;
+            border-radius: 99px;
+            border: 2px solid vars.$darkner-16;
+            background-color: vars.$background-primary;
+            box-sizing: border-box;
+            transition: all 0.2s;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: vars.$darkner-24;
+            transition: all 0.2s ease;
+        }
+    }
+
+    &__description {
+        color: vars.$text-secondary;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}

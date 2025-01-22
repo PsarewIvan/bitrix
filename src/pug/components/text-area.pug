@@ -1,0 +1,5 @@
+mixin text-area({label, placeholder, value, className})
+    .text-area.js-text-area-node(class=className)
+        if label
+            .text-area__label= label
+        textarea.text-area__input.js-text-area(placeholder=placeholder)= value

@@ -1,0 +1,74 @@
+@use '../vars.scss';
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &.s {
+        padding: 7px 23px;
+    }
+
+    &.m {
+        padding: 11px 14px;
+    }
+
+    &.l {
+        padding: 15px 31px;
+        font-size: 16px;
+    }
+
+    &.primary {
+        border-color: vars.$accent-500;
+        background-color: vars.$accent-500;
+        color: vars.$text-primary-invert;
+
+        &:hover:not(:disabled) {
+            border-color: vars.$accent-700;
+        }
+
+        &:active:not(:disabled) {
+            border-color: vars.$accent-500;
+            background-color: vars.$accent-700;
+        }
+
+        &:disabled {
+            border-color: vars.$accent-500;
+            background-color: vars.$accent-500;
+            opacity: 0.48;
+        }
+    }
+
+    &.secondary {
+        background-color: transparent;
+        border-color: vars.$text-secondary;
+        color: vars.$text-primary;
+
+        &:hover:not(:disabled) {
+            border-color: vars.$accent-500;
+            background-color: vars.$darkner-4;
+        }
+
+        &:active:not(:disabled) {
+            border-color: vars.$accent-500;
+            background-color: vars.$accent-700;
+            color: vars.$text-primary-invert;
+        }
+
+        &:disabled {
+            border-color: vars.$text-secondary;
+            opacity: 0.48;
+        }
+    }
+}

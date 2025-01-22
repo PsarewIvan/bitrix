@@ -1,0 +1,6 @@
+mixin toggle({id, text, description, name, checked})
+    .toggle
+        input(type="checkbox" id=id name=name checked=checked)
+        label.toggle__label(for=id)= text
+            if description
+                span.toggle__description= description
