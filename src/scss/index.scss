@@ -10,10 +10,12 @@
 @use './components/button.scss';
 @use './components/toggle.scss';
 @use './components/checkbox.scss';
+@use './components/tabs.scss';
 
 @use './pages/index.scss';
 @use './pages/notification.scss';
 @use './pages/login.scss';
+@use './pages/settings.scss';
 
 * {
     box-sizing: border-box;

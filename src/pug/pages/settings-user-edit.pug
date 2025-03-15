@@ -1,0 +1,44 @@
+extends ../layout.pug
+
+block content
+    include ../includes/header.pug
+    include ../components/toggle.pug
+    include ../components/text-area.pug
+    include ../components/text-input.pug
+    include ../components/button.pug
+    include ../icons/icon-trash.pug
+    include ../icons/icon-pencil.pug
+
+    .main
+        .content
+            .content__left
+                .message.hidden.js-message
+                    .message__title Сообщение в техподдержку
+                    .message__sub-title Если у вас возникли вопросы в процессе работы с Wazapa Pro напишите нам и мы постараемся в кратчайшие сроки вам ответить
+                    .message__form
+                        +text-area({placeholder: 'Placeholder', className: 'message__textarea'})
+                        .message__controls
+                            +button({text: 'Отмена', theme: 'secondary', className: 'js-close-message'})
+                            +button({text: 'Отправить сообщение'})
+
+                .message__title Настройки
+                .settings-tabs-content
+                    .settings-tabs.js-tabs
+                        button.settings-tabs__button(type="button" data-tab='js-settings-tab-common') Общие настройки
+                        button.settings-tabs__button.active(type="button" data-tab='js-settings-tab-users') Пользователи
+
+                    // add Общие настройки
+                    
+                    .settings-user.js-settings-tab-users
+                        +text-input({label: 'Пользователь', placeholder: 'lermontov1814@yandex.ru', size: 'l', className: 'settings-user__input'})
+                        +text-input({label: 'Имя портала', placeholder: 'Портал в бесконечность', size: 'l', className: 'settings-user__input'})
+                        .settings-user__toggles
+                            +toggle({id: 'settings-notification', text: 'Получать уведомления в открытые линии', checked: true})
+                            +toggle({id: 'settings-verified', text: 'Галочка «Я этот пользователь»', checked: false})
+                            +toggle({id: 'settings-admin', text: 'Администратор', checked: false})
+                            +toggle({id: 'settings-new-message', text: 'Показывать всплывающие уведомления о новых сообщениях', checked: true})
+                        +text-input({label: 'Токен WhatsApp', size: 'l', className: 'settings-user__token-input'})
+                        div
+                            +button({text: 'Сохранить', size: 'l'})
+            .content__right
+                img.content__right-img(src="img/il.svg")

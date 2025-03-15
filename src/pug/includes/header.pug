@@ -1,17 +1,20 @@
 block content
     include ../components/tooltip.pug
     include ../icons/icon-question.pug
+    include ../icons/icon-settings.pug
     include ../icons/icon-exit.pug
 
     header.header
-        .header__logo
+        a.header__logo(href="/")
             img.header__logo-img(src="img/logo.svg")
         .header__content
             .header__content-question
                 +icon-question('header__content-question-icon')
-                span Есть вопросы?
-                button.header__content-question-button.js-message-button(type="button") Свяжитесь с нами
+                button.header__content-question-button.js-message-button(type="button") Техподдержка
             if hasLogin === 'true'
+                .header__content-question
+                    +icon-settings('header__content-question-icon')
+                    a.header__content-question-button.js-settings-button(href="settings-general.html") Настройки
                 .header__content-account
                     .header__content-account-text
                         span Аккаунт: 

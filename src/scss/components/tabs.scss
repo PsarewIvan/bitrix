@@ -1,0 +1,48 @@
+@use '../vars.scss';
+
+.settings-tabs {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 2px solid vars.$darkner-16;
+
+    &__button {
+        position: relative;
+        display: flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px 10px;
+        margin: 0;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        cursor: pointer;
+        transition: color 0.2s;
+
+        &:hover {
+            color: vars.$accent-700;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            display: block;
+            height: 4px;
+            background-color: vars.$accent-500;
+            border-radius: 2px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        &.active {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}

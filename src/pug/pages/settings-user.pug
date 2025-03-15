@@ -1,0 +1,63 @@
+extends ../layout.pug
+
+block content
+    include ../includes/header.pug
+    include ../components/toggle.pug
+    include ../components/text-area.pug
+    include ../components/text-input.pug
+    include ../components/button.pug
+    include ../icons/icon-trash.pug
+    include ../icons/icon-pencil.pug
+
+    .main
+        .content
+            .content__left
+                .message.hidden.js-message
+                    .message__title Сообщение в техподдержку
+                    .message__sub-title Если у вас возникли вопросы в процессе работы с Wazapa Pro напишите нам и мы постараемся в кратчайшие сроки вам ответить
+                    .message__form
+                        +text-area({placeholder: 'Placeholder', className: 'message__textarea'})
+                        .message__controls
+                            +button({text: 'Отмена', theme: 'secondary', className: 'js-close-message'})
+                            +button({text: 'Отправить сообщение'})
+
+                .message__title Настройки
+                .settings-tabs-content
+                    .settings-tabs.js-tabs
+                        button.settings-tabs__button(type="button" data-tab='js-settings-tab-common') Общие настройки
+                        button.settings-tabs__button.active(type="button" data-tab='js-settings-tab-users') Пользователи
+                    
+                    // add Общие настройки
+
+                    .settings-access.js-settings-tab-users
+                        .settings-access__add
+                            button.settings-access__add-button(type="button") Добавить пользователя
+                        .settings-access__list
+                            .settings-access__item
+                                .settings-access__item-content
+                                    p.settings-access__item-title client@wazapa.pro
+                                    p.settings-access__item-sub-title Администратор
+                                .settings-access__item-controls
+                                    button.settings-access__item-button(type="button")
+                                        +icon-trash('settings-access__item-icon')
+                                    button.settings-access__item-button(type="button")
+                                        +icon-pencil('settings-access__item-icon')
+                            .settings-access__item
+                                .settings-access__item-content
+                                    p.settings-access__item-title lermontov1814@yandex.ru
+                                .settings-access__item-controls
+                                    button.settings-access__item-button(type="button")
+                                        +icon-trash('settings-access__item-icon')
+                                    button.settings-access__item-button(type="button")
+                                        +icon-pencil('settings-access__item-icon')
+                            .settings-access__item
+                                .settings-access__item-content
+                                    p.settings-access__item-title skłodowska.curie@yahoo.com
+                                .settings-access__item-controls
+                                    button.settings-access__item-button(type="button")
+                                        +icon-trash('settings-access__item-icon')
+                                    button.settings-access__item-button(type="button")
+                                        +icon-pencil('settings-access__item-icon')
+
+            .content__right
+                img.content__right-img(src="img/il.svg")

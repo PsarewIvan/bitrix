@@ -1,0 +1,136 @@
+@use '../vars.scss';
+
+.settings-tabs-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px;
+}
+
+.settings-access {
+    display: flex;
+    flex-direction: column;
+
+    &__add {
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid vars.$darkner-16;
+    }
+
+    &__add-button {
+        display: flex;
+        align-items: center;
+        min-height: 46px;
+        padding: 0 12px;
+        margin: 0;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        line-height: 24px;
+        color: vars.$link-500;
+        transition: color 0.2s;
+        cursor: pointer;
+
+        &:hover {
+            color: vars.$link-700;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        border-bottom: 1px solid vars.$darkner-16;
+    }
+
+    &__item-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px;
+    }
+
+    &__item-title {
+        margin: 0;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &__item-sub-title {
+        margin: 0;
+        font-size: 14px;
+        line-height: 20px;
+        color: vars.$text-secondary;
+    }
+
+    &__item-controls {
+        flex-shrink: 0;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    &__item-button {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-radius: 16px;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+            background-color: vars.$darkner-4;
+
+            .settings-access__item-icon {
+                color: vars.$accent-600;
+            }
+        }
+
+        &:active {
+            background-color: vars.$text-secondary;
+
+            .settings-access__item-icon {
+                color: vars.$text-primary-invert;
+            }
+        }
+    }
+
+    &__item-icon {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        color: vars.$text-secondary;
+        transition: color 0.2s;
+    }
+}
+
+.settings-user {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &__toggles {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__token-input {
+        max-width: 276px;
+    }
+}
