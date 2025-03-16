@@ -44,7 +44,28 @@
               <button class="settings-tabs__button" type="button" data-tab="js-settings-tab-common">Общие настройки</button>
               <button class="settings-tabs__button active" type="button" data-tab="js-settings-tab-users">Пользователи</button>
             </div>
-            <!-- add Общие настройки-->
+            <form class="settings-form js-settings-tab-common hidden">
+                  <div class="toggle">
+                    <input type="checkbox" id="settings-notification" checked>
+                    <label class="toggle__label" for="settings-notification">Уведомление об отправке файлов
+                    </label>
+                  </div>
+                  <div class="toggle">
+                    <input type="checkbox" id="settings-comment" checked>
+                    <label class="toggle__label" for="settings-comment">Добавлять комментарий об отправке сообщения в таймлайн сделки
+                    </label>
+                  </div>
+                  <div class="toggle">
+                    <input type="checkbox" id="settings-tel-list" checked>
+                    <label class="toggle__label" for="settings-tel-list">Показывать список телефонов, если у получателя несколько номеров
+                    </label>
+                  </div>
+                  <div class="toggle">
+                    <input type="checkbox" id="settings-sender-tel" checked>
+                    <label class="toggle__label" for="settings-sender-tel">Возможность выбрать номер отправителя
+                    </label>
+                  </div>
+            </form>
             <div class="settings-user js-settings-tab-users">
                   <div class="text-input js-text-input-node l settings-user__input">
                     <div class="text-input__label">Пользователь</div>

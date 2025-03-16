@@ -1,5 +1,8 @@
 extends ../layout.pug
 
+block variables
+    - var hasLogin = 'true'
+
 block content
     include ../includes/header.pug
     include ../components/toggle.pug
@@ -24,14 +27,41 @@ block content
                 .settings-tabs-content
                     .settings-tabs.js-tabs
                         button.settings-tabs__button.active(type="button" data-tab='js-settings-tab-common') Общие настройки
-                        button.settings-tabs__button(type="button" data-tab='js-settings-tab-access') Доступы
+                        button.settings-tabs__button(type="button" data-tab='js-settings-tab-users') Пользователи
                     form.settings-form.js-settings-tab-common
                         +toggle({id: 'settings-notification', text: 'Уведомление об отправке файлов', checked: true})
                         +toggle({id: 'settings-comment', text: 'Добавлять комментарий об отправке сообщения в таймлайн сделки', checked: true})
                         +toggle({id: 'settings-tel-list', text: 'Показывать список телефонов, если у получателя несколько номеров', checked: true})
                         +toggle({id: 'settings-sender-tel', text: 'Возможность выбрать номер отправителя', checked: true})
-
-                    // add Доступы
+                    .settings-access.js-settings-tab-users.hidden
+                        .settings-access__add
+                            button.settings-access__add-button(type="button") Добавить пользователя
+                        .settings-access__list
+                            .settings-access__item
+                                .settings-access__item-content
+                                    p.settings-access__item-title client@wazapa.pro
+                                    p.settings-access__item-sub-title Администратор
+                                .settings-access__item-controls
+                                    button.settings-access__item-button(type="button")
+                                        +icon-trash('settings-access__item-icon')
+                                    button.settings-access__item-button(type="button")
+                                        +icon-pencil('settings-access__item-icon')
+                            .settings-access__item
+                                .settings-access__item-content
+                                    p.settings-access__item-title lermontov1814@yandex.ru
+                                .settings-access__item-controls
+                                    button.settings-access__item-button(type="button")
+                                        +icon-trash('settings-access__item-icon')
+                                    button.settings-access__item-button(type="button")
+                                        +icon-pencil('settings-access__item-icon')
+                            .settings-access__item
+                                .settings-access__item-content
+                                    p.settings-access__item-title skłodowska.curie@yahoo.com
+                                .settings-access__item-controls
+                                    button.settings-access__item-button(type="button")
+                                        +icon-trash('settings-access__item-icon')
+                                    button.settings-access__item-button(type="button")
+                                        +icon-pencil('settings-access__item-icon')
 
             .content__right
                 img.content__right-img(src="img/il.svg")

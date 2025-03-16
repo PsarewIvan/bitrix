@@ -26,9 +26,11 @@ block content
                     .settings-tabs.js-tabs
                         button.settings-tabs__button(type="button" data-tab='js-settings-tab-common') Общие настройки
                         button.settings-tabs__button.active(type="button" data-tab='js-settings-tab-users') Пользователи
-
-                    // add Общие настройки
-                    
+                    form.settings-form.js-settings-tab-common.hidden
+                        +toggle({id: 'settings-notification', text: 'Уведомление об отправке файлов', checked: true})
+                        +toggle({id: 'settings-comment', text: 'Добавлять комментарий об отправке сообщения в таймлайн сделки', checked: true})
+                        +toggle({id: 'settings-tel-list', text: 'Показывать список телефонов, если у получателя несколько номеров', checked: true})
+                        +toggle({id: 'settings-sender-tel', text: 'Возможность выбрать номер отправителя', checked: true})
                     .settings-user.js-settings-tab-users
                         +text-input({label: 'Пользователь', placeholder: 'lermontov1814@yandex.ru', size: 'l', className: 'settings-user__input'})
                         +text-input({label: 'Имя портала', placeholder: 'Портал в бесконечность', size: 'l', className: 'settings-user__input'})
