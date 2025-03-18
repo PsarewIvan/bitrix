@@ -1,5 +1,8 @@
 extends ../layout.pug
 
+block variables
+    - var hasLogin = 'true'
+
 block content
     include ../includes/header.pug
     include ../components/toggle.pug
@@ -35,7 +38,7 @@ block content
                         +text-input({label: 'Пользователь', placeholder: 'lermontov1814@yandex.ru', size: 'l', className: 'settings-user__input'})
                         +text-input({label: 'Имя портала', placeholder: 'Портал в бесконечность', size: 'l', className: 'settings-user__input'})
                         .settings-user__toggles
-                            +toggle({id: 'settings-notification', text: 'Получать уведомления в открытые линии', checked: true})
+                            +toggle({id: 'settings-notification-lines', text: 'Получать уведомления в открытые линии', checked: true})
                             +toggle({id: 'settings-verified', text: 'Галочка «Я этот пользователь»', checked: false})
                             +toggle({id: 'settings-admin', text: 'Администратор', checked: false})
                             +toggle({id: 'settings-new-message', text: 'Показывать всплывающие уведомления о новых сообщениях', checked: true})
